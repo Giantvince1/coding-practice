@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Shell Script",
+            "type": "f5anything",
+            "request": "launch",
+            "command": "dash \"${file}\"",
+            "terminalName": "DASH Terminal",
+            "terminalIndex": 1,
+            "showTerminal": true,
+        },
+        {
+            "name": "Run PowerShell Script",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "args": [],
+            "cwd": "${file}"
+        }
+    ],
+    "compounds": []
+}

@@ -8,7 +8,7 @@
       "command": "python \"${file}\"",
       "terminalName": "F5 Anything",
       "terminalIndex": 1,
-      "showTerminal": true,
+      "showTerminal": true
     },
     {
       "name": "Run Shell Script",

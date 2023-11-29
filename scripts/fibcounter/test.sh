@@ -2,7 +2,7 @@
 a=1
 b=1
 x=$((a+b))
-max=100
+max=1000
 echo 1
 echo 1
 echo $x

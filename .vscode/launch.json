@@ -1,23 +1,51 @@
 {
-    "version": "0.2.0",
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Python Script",
+      "type": "f5anything",
+      "request": "launch",
+      "command": "python \"${file}\"",
+      "terminalName": "F5 Anything",
+      "terminalIndex": 1,
+      "showTerminal": true,
+    },
+    {
+      "name": "Run Shell Script",
+      "type": "f5anything",
+      "request": "launch",
+      "command": "dash \"${file}\"",
+      "terminalName": "F5 Anything",
+      "terminalIndex": 1,
+      "showTerminal": true
+    },
+    {
+      "name": "Run PowerShell Script",
+      "type": "PowerShell",
+      "request": "launch",
+      "script": "${file}",
+      "args": [],
+      "cwd": "${file}"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/owner/coding-practice/c/fibcounter",
+      "program": "/home/owner/coding-practice/c/fibcounter/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
         {
-            "name": "Run Shell Script",
-            "type": "f5anything",
-            "request": "launch",
-            "command": "dash \"${file}\"",
-            "terminalName": "DASH Terminal",
-            "terminalIndex": 1,
-            "showTerminal": true,
-        },
-        {
-            "name": "Run PowerShell Script",
-            "type": "PowerShell",
-            "request": "launch",
-            "script": "${file}",
-            "args": [],
-            "cwd": "${file}"
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
         }
-    ],
-    "compounds": []
+      ]
+    }
+  ],
+  "compounds": []
 }

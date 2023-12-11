@@ -28,24 +28,41 @@
       "cwd": "${file}"
     },
     {
-      "name": "C/C++ Runner: Debug Session",
+      "name": "Build active C/C++ file (no optimizations)",
+      "type": "f5anything",
+      "request": "launch",
+      "command": "/usr/bin/g++ -g \"${file}\" -o \"${fileDirname}/bin/${fileBasenameNoExtension}.elf\"",
+    },
+    {
+      "name": "Build active C/C++ file (with optimizations)",
+      "type": "f5anything",
+      "request": "launch",
+      "command": "/usr/bin/g++ -g \"${file}\" -o \"${fileDirname}/bin/${fileBasenameNoExtension}.elf\" -O3",
+    },
+    {
+      "name": "Start GDB Debug Session",
       "type": "cppdbg",
       "request": "launch",
+      "program": "${fileDirname}/bin/${fileBasenameNoExtension}.elf",
       "args": [],
       "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
       "externalConsole": false,
-      "cwd": "/home/owner/coding-practice/c/fibcounter",
-      "program": "/home/owner/coding-practice/c/fibcounter/build/Debug/outDebug",
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
           "text": "-enable-pretty-printing",
           "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
         }
       ]
-    }
+    },
   ],
   "compounds": []
 }
